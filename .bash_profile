@@ -19,7 +19,7 @@ if [ -f ~/.token ]; then
 fi
 
 # change the umask value to be just read and write for user and group only
-umask 117
+umask 006
 
 # adding "/home/<username>/usercommands" directory to PATH environment variables
 export PATH=$PATH:$USER_COMMANDS
@@ -31,8 +31,8 @@ date --iso-8601=seconds
 alias ltxt=$TXT_ALIAS
 
 # check if there is a directory named "tmp" in the home directory of the user
-if [ -f ~/tmp ]; then
-    rm -r ~/tmp/*
+if [ -d ~/tmp ]; then
+    rm -rf ~/tmp/*
 else
     mkdir ~/tmp
 fi
